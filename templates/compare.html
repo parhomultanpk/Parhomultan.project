@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compare Schools | Parho Multan</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="header">
+    <a class="brand" href="/"><img src="{{ url_for('static', filename='logo.jpg') }}"></a>
+    <nav><a href="/schools">Schools</a><a href="/compare">Compare</a><a href="/#areas">Areas</a><a href="/#about">About</a></nav>
+</header>
+
+<main class="page">
+    <span class="eyebrow">COMPARE</span>
+    <h1>Compare schools</h1>
+    {% if schools %}
+    <div class="compare-wrap">
+        <table class="compare-table">
+            <tr><th>Information</th>{% for s in schools %}<th>{{ s.name }}</th>{% endfor %}</tr>
+            <tr><td>Area</td>{% for s in schools %}<td>{{ s.area }}</td>{% endfor %}</tr>
+            <tr><td>Monthly fee</td>{% for s in schools %}<td>Rs. {{ "{:,}".format(s.fee) }}</td>{% endfor %}</tr>
+            <tr><td>Admission fee</td>{% for s in schools %}<td>Rs. {{ "{:,}".format(s.admission) }}</td>{% endfor %}</tr>
+            <tr><td>Curriculum</td>{% for s in schools %}<td>{{ s.curriculum }}</td>{% endfor %}</tr>
+            <tr><td>Classes</td>{% for s in schools %}<td>{{ s.classes }}</td>{% endfor %}</tr>
+            <tr><td>Gender</td>{% for s in schools %}<td>{{ s.gender }}</td>{% endfor %}</tr>
+            <tr><td>Rating</td>{% for s in schools %}<td>★ {{ s.rating }}</td>{% endfor %}</tr>
+        </table>
+    </div>
+    {% else %}
+    <div class="empty">
+        <h2>Select schools to compare</h2>
+        <p>Open a school and click “Add to Compare”.</p>
+        <a class="black-btn inline" href="/schools">Browse Schools</a>
+    </div>
+    {% endif %}
+</main>
+</body>
+</html>

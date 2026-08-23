@@ -1,0 +1,7 @@
+<!doctype html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>{{ school.name }} | Parho Multan</title><link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}"></head><body>
+<header class="header"><a class="brand" href="/"><img src="{{ url_for('static',filename='logo.jpg') }}"></a><nav><a href="/schools">Schools</a><a href="/#areas">Areas</a><a href="/#about">About</a></nav></header>
+<main class="page"><a class="back" href="/schools">← Back to schools</a>
+<section class="group-header"><div class="group-logo"><img src="{{ url_for('static',filename=school.logo) }}"></div><div><span class="eyebrow">SCHOOL GROUP</span><h1>{{ school.name }}</h1><p class="branch-count">{{ school.branches|length }} branch{% if school.branches|length != 1 %}es{% endif %} in the directory</p></div></section>
+<div class="section-heading branch-heading"><div><span class="eyebrow">CAMPUSES</span><h2>Choose a branch</h2></div></div>
+<div class="branch-cards">{% for branch in school.branches %}<a class="branch-card" href="/school/{{ school.id }}/branch/{{ branch.id }}"><div class="branch-image"><img src="{{ url_for('static',filename=branch.image) }}"></div><div class="branch-content"><h3>{{ branch.name }}</h3><p>{{ branch.address }}</p><span>View branch details →</span></div></a>{% endfor %}</div>
+</main></body></html>

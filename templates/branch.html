@@ -1,0 +1,11 @@
+<!doctype html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>{{ branch.name }} | Parho Multan</title><link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}"></head><body>
+<header class="header"><a class="brand" href="/"><img src="{{ url_for('static',filename='logo.jpg') }}"></a><nav><a href="/schools">Schools</a><a href="/#areas">Areas</a><a href="/#about">About</a></nav></header>
+<main class="page"><a class="back" href="/school/{{ school.id }}">← Back to {{ school.name }}</a>
+<section class="branch-hero"><div class="branch-hero-image"><img src="{{ url_for('static',filename=branch.image) }}"></div><div><span class="eyebrow">BRANCH</span><h1>{{ branch.name }}</h1><p class="branch-school">{{ school.name }}</p><p class="branch-address">{{ branch.address }}</p></div></section>
+<section class="detail-grid"><div class="detail-main">
+<div class="detail-box"><span class="eyebrow">CLASSES</span><h2>Classes offered</h2><p class="large-info">{{ branch.classes }}</p></div>
+<div class="detail-box"><span class="eyebrow">SCHOOL INFORMATION</span><h2>Details</h2><div class="info-grid"><div><small>CURRICULUM</small><strong>{{ branch.curriculum }}</strong></div><div><small>GENDER</small><strong>{{ branch.gender }}</strong></div><div><small>LAST VERIFIED</small><strong>{{ branch.verified }}</strong></div><div><small>FEES</small><strong>See campus fee structure</strong></div></div></div>
+<div class="detail-box"><span class="eyebrow">FACILITIES</span><h2>Available facilities</h2>{% for f in branch.facilities %}<div class="facility">✓ {{ f }}</div>{% endfor %}</div>
+</div><aside class="detail-side"><div class="detail-box"><span class="eyebrow">ADDRESS</span><h3>{{ branch.name }}</h3><p>{{ branch.address }}</p><button class="outline-full">Get Directions</button></div>
+<div class="detail-box"><span class="eyebrow">FEE INFORMATION</span><p class="note">Fee information can be added here for each grade and verified by Parho Multan. This page intentionally does not show a generic school-group fee.</p></div></aside></section>
+</main></body></html>
