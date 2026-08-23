@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+    --black:#111111;
+    --paper:#f7f5f0;
+    --white:#ffffff;
+    --line:#dedbd4;
+    --muted:#686761;
+}
+* { box-sizing:border-box; }
+body { margin:0; color:var(--black); background:var(--paper); font-family:"DM Sans",Arial,sans-serif; }
+a { color:inherit; text-decoration:none; }
+.header {
+    height:86px; padding:12px 5%; display:flex; align-items:center; gap:40px;
+    border-bottom:1px solid var(--line); background:rgba(247,245,240,.96);
+    position:sticky; top:0; z-index:20;
+}
+.brand { display:block; width:150px; }
+.brand img { width:100%; display:block; mix-blend-mode:multiply; }
+nav { display:flex; gap:28px; margin-left:auto; }
+nav a { font-size:14px; font-weight:600; }
+.outline-btn,.outline-full {
+    border:1px solid var(--black); padding:11px 16px; background:transparent;
+    font-weight:600; cursor:pointer;
+}
+.hero {
+    min-height:610px; display:grid; grid-template-columns:1.1fr .9fr;
+    align-items:center; padding:70px 8%; overflow:hidden; border-bottom:1px solid var(--line);
+}
+.hero-content { max-width:720px; position:relative; z-index:2; }
+.eyebrow { letter-spacing:.14em; font-size:11px; font-weight:700; color:#555; }
+h1,h2 { font-family:"Playfair Display",Georgia,serif; font-weight:600; }
+.hero h1 { font-size:clamp(50px,7vw,92px); line-height:.96; margin:18px 0 25px; }
+.hero h1 em { font-style:italic; }
+.hero p { color:var(--muted); font-size:18px; line-height:1.7; max-width:580px; }
+.search-box {
+    margin-top:32px; background:white; border:1px solid #bbb7ae; display:flex;
+    max-width:620px; padding:6px; align-items:center;
+}
+.search-box span { font-size:28px; padding:0 10px; }
+.search-box input { border:0; outline:0; flex:1; font-size:15px; padding:14px 4px; background:transparent; }
+.search-box button,.filters button { border:0; background:var(--black); color:white; padding:14px 22px; font-weight:700; cursor:pointer; }
+.popular { display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; font-size:12px; color:var(--muted); }
+.popular a { border-bottom:1px solid #aaa; }
+.hero-art { display:flex; justify-content:center; align-items:center; }
+.hero-art img { width:min(540px,100%); mix-blend-mode:multiply; filter:grayscale(1); opacity:.9; }
+.section,.page { padding:80px 7%; max-width:1400px; margin:auto; }
+.section-heading { display:flex; justify-content:space-between; align-items:end; margin-bottom:35px; }
+h2 { font-size:44px; margin:10px 0 0; }
+.text-link { font-weight:700; font-size:14px; }
+.cards { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+.school-card { background:white; border:1px solid var(--line); padding:24px; min-height:310px; display:flex; flex-direction:column; }
+.card-top { display:flex; justify-content:space-between; font-size:12px; margin-bottom:25px; }
+.verified { color:#315d3a; font-size:11px; font-weight:700; background:#edf4ed; padding:6px 9px; display:inline-block; }
+.school-card h3 { font-family:"Playfair Display",Georgia,serif; font-size:24px; margin:0 0 8px; }
+.campus,.meta { color:var(--muted); font-size:13px; line-height:1.5; }
+.fee { border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:18px 0; margin:18px 0; }
+.fee small,.big-fee small,.info-grid small { display:block; color:#777; font-size:9px; letter-spacing:.12em; font-weight:700; }
+.fee strong { display:block; font-size:23px; margin-top:4px; }
+.card-btn { background:var(--black); color:white; padding:12px; text-align:center; margin-top:auto; font-size:13px; font-weight:700; }
+.stats { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.stats div { padding:45px; text-align:center; border-right:1px solid var(--line); }
+.stats div:last-child { border-right:0; }
+.stats strong { display:block; font-family:"Playfair Display",Georgia,serif; font-size:46px; }
+.stats span { color:var(--muted); font-size:13px; }
+.area-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.area-card { background:#111; color:#fff; padding:28px; min-height:145px; }
+.area-card span { font-size:20px; }
+.area-card h3 { font-family:"Playfair Display",Georgia,serif; font-size:25px; margin:22px 0 8px; }
+.area-card small { color:#bbb; }
+.about { margin:0 7% 70px; padding:55px; background:#111; color:white; display:grid; grid-template-columns:1fr 1fr; gap:50px; }
+.about .eyebrow { color:#aaa; }
+.about h2 { font-size:48px; margin-bottom:0; }
+.about p { color:#ccc; line-height:1.8; font-size:16px; }
+footer { background:#111; color:#fff; padding:55px 7%; display:grid; grid-template-columns:2fr 1fr 1fr; gap:40px; }
+footer img { width:180px; filter:invert(1); }
+footer p { color:#aaa; }
+footer h4 { margin-top:0; }
+footer a { display:block; color:#aaa; margin:12px 0; font-size:13px; }
+.filters { display:grid; grid-template-columns:2fr 1fr 1fr auto; gap:10px; margin:35px 0 20px; }
+.filters input,.filters select { border:1px solid #c8c4bb; padding:14px; background:white; font:inherit; outline:0; }
+.result-count { color:var(--muted); font-size:13px; margin-bottom:25px; }
+.back { display:inline-block; margin-bottom:30px; font-weight:700; font-size:13px; }
+.school-header { background:white; border:1px solid var(--line); padding:45px; display:flex; justify-content:space-between; align-items:center; }
+.school-header h1 { font-size:54px; margin:18px 0 10px; }
+.school-header p { color:var(--muted); }
+.black-btn { border:0; background:#111; color:#fff; padding:13px 18px; margin-top:15px; font-weight:700; cursor:pointer; }
+.big-fee { border-left:1px solid var(--line); padding-left:55px; }
+.big-fee strong { display:block; font-family:"Playfair Display",Georgia,serif; font-size:40px; margin-top:10px; }
+.detail-grid { display:grid; grid-template-columns:2fr 1fr; gap:20px; margin-top:20px; }
+.detail-main,.detail-side { display:flex; flex-direction:column; gap:20px; }
+.detail-box { background:white; border:1px solid var(--line); padding:30px; }
+.detail-box h2 { font-size:32px; margin:10px 0 25px; }
+.fee-row { display:flex; justify-content:space-between; padding:16px 0; border-bottom:1px solid var(--line); }
+.note { color:var(--muted); font-size:12px; line-height:1.6; margin-bottom:0; }
+.info-grid { display:grid; grid-template-columns:1fr 1fr; gap:25px; }
+.info-grid strong { display:block; margin-top:7px; }
+.facility { padding:12px 0; border-bottom:1px solid var(--line); font-size:14px; }
+.outline-full { width:100%; margin-top:10px; }
+.compare-wrap { overflow-x:auto; margin-top:30px; }
+.compare-table { border-collapse:collapse; width:100%; background:white; border:1px solid var(--line); }
+.compare-table th,.compare-table td { padding:20px; border:1px solid var(--line); text-align:left; min-width:170px; }
+.compare-table th { font-family:"Playfair Display",Georgia,serif; font-size:18px; }
+.compare-table td:first-child { font-weight:700; background:#f0eee9; min-width:160px; }
+.empty { background:white; border:1px solid var(--line); padding:60px; text-align:center; }
+.inline { display:inline-block; }
+
+@media(max-width:900px) {
+    .header { gap:15px; padding:10px 4%; }
+    .brand { width:125px; }
+    nav { display:none; }
+    .outline-btn { margin-left:auto; }
+    .hero { grid-template-columns:1fr; padding:60px 6%; }
+    .hero-art { margin-top:35px; }
+    .hero-art img { max-width:350px; }
+    .cards { grid-template-columns:repeat(2,1fr); }
+    .area-grid { grid-template-columns:repeat(2,1fr); }
+    .about { grid-template-columns:1fr; margin-left:6%; margin-right:6%; }
+    footer { grid-template-columns:1fr 1fr; }
+    .school-header { flex-direction:column; align-items:flex-start; gap:30px; }
+    .big-fee { border-left:0; border-top:1px solid var(--line); padding:25px 0 0; width:100%; }
+    .detail-grid { grid-template-columns:1fr; }
+}
+@media(max-width:600px) {
+    .outline-btn { display:none; }
+    .hero h1 { font-size:52px; }
+    .search-box button { padding:13px; }
+    .cards,.area-grid,.stats { grid-template-columns:1fr; }
+    .stats div { border-right:0; border-bottom:1px solid var(--line); }
+    .stats div:last-child { border-bottom:0; }
+    .section,.page { padding:55px 5%; }
+    .section-heading { align-items:flex-start; gap:15px; flex-direction:column; }
+    h2 { font-size:38px; }
+    .filters { grid-template-columns:1fr; }
+    .school-header { padding:28px; }
+    .school-header h1 { font-size:40px; }
+    .about { padding:35px; }
+    .about h2 { font-size:38px; }
+    footer { grid-template-columns:1fr; }
+}
+
+/* Parho Multan V2 */
+.intro{position:fixed;inset:0;z-index:9999;background:#f7f5f0;display:flex;align-items:center;justify-content:center;opacity:1;visibility:visible;animation:introFade 1.8s ease forwards}.intro-logo-wrap{width:min(520px,78vw);animation:logoSlide 1.25s cubic-bezier(.2,.8,.2,1) both}.intro-logo{width:100%;display:block;mix-blend-mode:multiply}.intro-hide{animation:introExit .65s ease forwards!important;pointer-events:none}@keyframes logoSlide{from{transform:translateY(65px);opacity:0}to{transform:translateY(0);opacity:1}}@keyframes introFade{0%,72%{opacity:1;visibility:visible}100%{opacity:0;visibility:hidden;pointer-events:none}}@keyframes introExit{from{opacity:1;visibility:visible}to{opacity:0;visibility:hidden}}
+.school-card-clickable{cursor:pointer;transition:transform .2s ease,border-color .2s ease}.school-card-clickable:hover{transform:translateY(-5px);border-color:#aaa}.school-logo-box{width:100%;height:145px;background:#f4f2ed;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;margin-bottom:22px}.school-logo-box img{max-width:78%;max-height:110px;object-fit:contain;mix-blend-mode:multiply}.school-card-clickable h3{margin-bottom:6px}.branch-count{color:#9a9891;font-size:13px;margin:0}.card-bottom{border-top:1px solid var(--line);margin-top:auto;padding-top:16px;display:flex;justify-content:space-between;font-size:12px;font-weight:700}
+.group-header{background:#fff;border:1px solid var(--line);padding:42px;display:flex;align-items:center;gap:28px;margin-bottom:55px}.group-logo{width:145px;height:145px;background:#f4f2ed;border:1px solid var(--line);display:flex;align-items:center;justify-content:center}.group-logo img{max-width:85%;max-height:115px;object-fit:contain;mix-blend-mode:multiply}.group-header h1{font-size:52px;margin:8px 0}.branch-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.branch-card{background:#fff;border:1px solid var(--line);transition:transform .2s ease}.branch-card:hover{transform:translateY(-4px)}.branch-image{height:240px;background:#eeeae3;display:flex;align-items:center;justify-content:center;overflow:hidden}.branch-image img{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply}.branch-content{padding:25px}.branch-content h3{font-family:"Playfair Display",Georgia,serif;font-size:26px;margin:0 0 10px}.branch-content p{color:#99978f;font-size:13px;line-height:1.6;min-height:42px}.branch-content span{font-size:12px;font-weight:700}.branch-hero{background:#fff;border:1px solid var(--line);padding:35px;display:flex;align-items:center;gap:35px;margin-bottom:20px}.branch-hero-image{width:300px;height:210px;background:#eeeae3;flex-shrink:0}.branch-hero-image img{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply}.branch-hero h1{font-size:48px;margin:12px 0 5px}.branch-school{font-weight:700;margin:0 0 10px}.branch-address{color:#9a9891;margin:0;line-height:1.6}.large-info{font-size:22px;font-family:"Playfair Display",Georgia,serif}
+@media(max-width:900px){.branch-cards{grid-template-columns:1fr}.group-header{align-items:flex-start}.branch-hero{flex-direction:column;align-items:flex-start}.branch-hero-image{width:100%;height:240px}}@media(max-width:600px){.intro-logo-wrap{width:86vw}.school-logo-box{height:125px}.group-header{padding:28px;flex-direction:column}.group-header h1{font-size:39px}.branch-hero{padding:25px}.branch-hero h1{font-size:38px}}
+
+/* Dark-mode logo supplied by the Parho Multan design */
+@media (prefers-color-scheme: dark) {
+  .intro { background:#000; }
+  .intro-logo,
+  .hero-art img,
+  .brand img,
+  .footer-brand img { content:url("/static/logo-dark.jpg"); }
+
+  body { background:#0b0b0b; color:#f5f5f5; }
+  .header, .school-card, .branch-card, .group-header,
+  .branch-hero, .detail-box, .about { background:#111; color:#f5f5f5; border-color:#292929; }
+  .school-logo-box, .group-logo, .branch-image, .branch-hero-image {
+    background:#171717; border-color:#292929;
+  }
+  .branch-count, .branch-content p, .branch-address, .about p { color:#aaa; }
+  .card-bottom { border-color:#292929; }
+  .search-box, .filters { background:#111; border-color:#333; }
+  .search-box input, .filters input { background:transparent; color:#fff; }
+  footer { background:#050505; color:#eee; }
+  footer a { color:#bbb; }
+}
+
+/* Footer logo uses transparent PNGs so no white/black rectangle appears behind it. */
+.footer-brand img { background: transparent !important; mix-blend-mode: normal !important; object-fit: contain; }
+@media (prefers-color-scheme: dark) { .footer-brand img { content: url("/static/logo-footer-dark.png"); } }
+
+/* Footer logo: transparent artwork, so the footer background shows through. */
+.footer-brand img {
+    content: url("/static/logo-footer-light.png");
+    background: transparent !important;
+    mix-blend-mode: normal !important;
+    object-fit: contain;
+}
+@media (prefers-color-scheme: dark) {
+    .footer-brand img {
+        content: url("/static/logo-footer-dark.png");
+        background: transparent !important;
+        mix-blend-mode: normal !important;
+    }
+}
